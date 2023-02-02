@@ -1,26 +1,26 @@
 //задание 1
 
-const ReturSmallNumber = (a, b) => {
+const returSmallNumber = (a, b) => {
     if (a > b) {
-        return console.log(b);
+        return b;
     } else {
-        return console.log(a);
+        return a;
     }
 }
-ReturSmallNumber(8, 4);
-ReturSmallNumber(6, 6);
+console.log(returSmallNumber(8, 4));
+console.log(returSmallNumber(6, 6));
 
 //задание 2
 
 let num = +prompt('Введите число');
 const parityCheck = (num) => {
     if (num % 2 == 0) {
-        return console.log(`${num} - четное число`);
+        return `${num} - четное число`;
     } else {
-        return console.log(`${num} - нечетное число`);
+        return `${num} - нечетное число`;
     }
 }
-parityCheck(num);
+console.log(parityCheck(num));
 
 //задание 3.1
 
@@ -37,13 +37,14 @@ outputSquareNumber(number);
 console.log(returnSquareNumber(number));
 
 //задание 4
-let userAge = +prompt('Сколько Вам лет?');
-const welcomeUser = (userAge) => {
+
+const welcomeUser = () => {
+    let userAge = +prompt('Сколько Вам лет?');
     userAge < 0 || isNaN(userAge) ? alert('Вы ввели неправильное значение') :
         userAge >= 0 && userAge < 13 ? alert('Привет, друг!') :
             alert('Добро пожаловать!');
 }
-welcomeUser(userAge);
+welcomeUser();
 
 //задание 5
 
@@ -64,15 +65,18 @@ checkingNumber(meaning1, meaning2);
 let numberAnswer = prompt('Введите число от 1 до 10 включительно');
 const cubingNumber = (numberAnswer) => {
     if (isNaN(numberAnswer)) {
-        return alert('Переданный параметр не является числом');
-    } else if (numberAnswer >= 1 && numberAnswer <= 10) {
-        let result = numberAnswer**2;
-        return alert(`${numberAnswer} в кубе равен ${result}`);
+        return 'Переданный параметр не является числом';
     } else {
-        alert('Необходимо ввести число от 1 до 10 включительно');
+        let result = numberAnswer**3;
+        return `${numberAnswer} в кубе равен ${result}`;
     }
 }
-cubingNumber(numberAnswer);
+console.log(cubingNumber(numberAnswer));//вывести значение в консоль, если isNaN(numberAnswer);
+
+for (let i = 0; i <= 10; i++) {
+    console.log(cubingNumber(i));
+  }
+
 
 
 
